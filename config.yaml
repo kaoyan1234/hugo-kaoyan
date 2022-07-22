@@ -1,0 +1,30 @@
+baseurl: "/"
+languageCode: "zh-CN"
+title: "考研 1234"
+theme: qaqland
+copyright: |
+  &copy;[QAQ](https://qaq.land) 1919 -- {Year} | Made with [Hugo](https://gohugo.io/).
+
+permalinks:
+  /: /:year/:filename/
+
+menu:
+  main:
+    - name: 学校
+    # 文件夹
+      url: ""
+    - name: 专业
+    # 分类
+      url: ""
+    - name: 标签
+    # tags
+      url: ""
+    - name: 通用  
+    # 双一流、学科代码
+
+markup:
+  highlight:
+    codeFences: false
+  goldmark:
+    renderer:
+      unsafe: true
