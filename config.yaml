@@ -3,7 +3,10 @@ languageCode: "zh-CN"
 title: "考研 1234"
 theme: qaqland
 copyright: |
-  &copy;[QAQ](https://qaq.land) 1919 -- {Year} | Made with [Hugo](https://gohugo.io/).
+  &copy; 2022 -- {Year} [kaoyan1234](https://kaoyan1234.com) | 微信 | 微博   
+  <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a>
+  <br />
+  This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
 
 permalinks:
   /: /:year/:filename/
@@ -11,15 +14,15 @@ permalinks:
 menu:
   main:
     - name: 学校
-    # 文件夹
+      # 文件夹
       url: ""
     - name: 专业
-    # 分类
+      # 分类
       url: ""
     - name: 标签
-    # tags
+      # tags
       url: ""
-    - name: 通用  
+    - name: 通用
     # 双一流、学科代码
 
 markup:
