@@ -67,7 +67,7 @@
 <script type="text/javascript">
   window.onload = function () {
 
-    var url = "{{.Site.BaseURL}}" + '{{ .Get "url" }}';
+    var url = '{{ .Get "url" | relURL}}';
     var hidePaginator = '{{ .Get "hidePaginator" }}' === "true";
     var hideLoader = '{{ .Get "hideLoader" }}' === "true";
     var selectedPageNum = parseInt('{{ .Get "renderPageNum" }}') || 1;
