@@ -11,16 +11,11 @@ permalinks:
 menu:
   main:
     - name: 学校
-      # 文件夹
-      url: ""
-    - name: 专业
-      # 分类
-      url: ""
-    - name: 标签
-      # tags
-      url: ""
+      url: /
+    - name: 学科
+      url: /tags
     - name: 通用
-    # 双一流、学科代码
+      url: /通用
 
 markup:
   highlight:

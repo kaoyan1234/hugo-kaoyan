@@ -1,0 +1,24 @@
+{{ define "main" -}}
+
+<style>
+    .terms  {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .terms li {
+        background: #eee;
+        border-radius: 5px;
+        border: 0;
+        margin: 0 6px;
+        padding: 5px;
+        align-items: baseline;
+    }
+</style>
+<h1 class="title">学科 {{ .Title }}</h1>
+{{- .Content }}
+<ul class="list terms">
+    {{ range .Site.Taxonomies.tags }}
+    <li><a href="{{ .Page.Permalink }}">{{ .Page.Title }} - {{ .Count }}</a></li>
+    {{ end }}
+</ul>
+{{- end }}

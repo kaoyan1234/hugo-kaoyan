@@ -1,3 +1,7 @@
+<!-- LICENSE
+  anvithks/hugo-embed-pdf-shortcode is licensed under the MIT License
+  mozilla/pdf.js is licensed under the Apache License 2.0
+ -->
 <!-- <script type="text/javascript" src='{{"./js/pdf-js/build/pdf.js" | relURL}}'></script> -->
 <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.15.349/build/pdf.min.js"></script>
 <style>
@@ -31,7 +35,6 @@
     width: 50px;
     height: 50px;
     border: 3px solid #d2d0d0;
-    ;
     border-radius: 50%;
     border-top-color: #383838;
     animation: spin 1s ease-in-out infinite;
@@ -52,10 +55,10 @@
 </style>
 
 <div id="paginator">
-  <button id="prev">Previous</button>
-  <button id="next">Next</button>
+  <button id="prev">←</button>
+  <button id="next">→</button>
   &nbsp; &nbsp;
-  <span>Page: <span id="page_num"></span> / <span id="page_count"></span></span>
+  <span id="page_num"></span> / <span id="page_count"></span>
 </div>
 <div id="embed-pdf-container">
   <div id="loadingWrapper">
@@ -67,6 +70,7 @@
 <script type="text/javascript">
   window.onload = function () {
 
+    // pdf files put at static/
     var url = '{{ .Get "url" | relURL}}';
     var hidePaginator = '{{ .Get "hidePaginator" }}' === "true";
     var hideLoader = '{{ .Get "hideLoader" }}' === "true";
@@ -90,15 +94,12 @@
       paginator = document.getElementById("paginator"),
       loadingWrapper = document.getElementById('loadingWrapper');
 
-
     // Attempt to show paginator and loader if enabled
     showPaginator();
     showLoader();
 
-    /**
-     * Get page info from document, resize canvas accordingly, and render page.
-     * @param num Page number.
-     */
+    // Get page info from document, resize canvas accordingly, and render page.
+    // @param num Page number. From 1
     function renderPage(num) {
       pageRendering = true;
       // Using promise to fetch the page
@@ -131,35 +132,27 @@
       document.getElementById('page_num').textContent = num;
     }
 
-    /**
-     * Hides loader and shows canvas
-     */
+    // Hides loader and shows canvas
     function showContent() {
       loadingWrapper.style.display = 'none';
       canvas.style.display = 'block';
     }
 
-    /**
-     * If we haven't disabled the loader, show loader and hide canvas
-     */
+    // If we haven't disabled the loader, show loader and hide canvas
     function showLoader() {
       if (hideLoader) return
       loadingWrapper.style.display = 'flex';
       canvas.style.display = 'none';
     }
 
-    /**
-     * If we haven't disabled the paginator, show paginator
-     */
+    // If we haven't disabled the paginator, show paginator
     function showPaginator() {
       if (hidePaginator) return
       paginator.style.display = 'block';
     }
 
-    /**
-     * If another page rendering in progress, waits until the rendering is
-     * finished. Otherwise, executes rendering immediately.
-     */
+    // If another page rendering in progress, waits until the rendering is
+    // finished. Otherwise, executes rendering immediately.
     function queueRenderPage(num) {
       if (pageRendering) {
         pageNumPending = num;
@@ -168,9 +161,7 @@
       }
     }
 
-    /**
-     * Displays previous page.
-     */
+    // Displays previous page.
     function onPrevPage() {
       if (pageNum <= 1) {
         return;
@@ -180,9 +171,7 @@
     }
     document.getElementById('prev').addEventListener('click', onPrevPage);
 
-    /**
-     * Displays next page.
-     */
+    // Displays next page.
     function onNextPage() {
       if (pageNum >= pdfDoc.numPages) {
         return;
@@ -192,9 +181,7 @@
     }
     document.getElementById('next').addEventListener('click', onNextPage);
 
-    /**
-     * Asynchronously downloads PDF.
-     */
+    // Asynchronously downloads PDF.
     pdfjsLib.getDocument(url).promise.then(function (pdfDoc_) {
       pdfDoc = pdfDoc_;
       var numPages = pdfDoc.numPages;

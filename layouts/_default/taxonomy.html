@@ -1,0 +1,12 @@
+{{ define "main" -}}
+<h1 class="title">taxonomy {{ .Title }}</h1>
+{{- .Content }}
+<ul class="list">
+  {{ range .Pages -}}
+  <li>
+    <a href="{{ .RelPermalink }}">{{ .Type }} - {{ .Title }}</a>
+    <small>{{ .Date.Format "2006/01/02" }}</small>
+  </li>
+  {{- end }}
+</ul>
+{{- end }}
