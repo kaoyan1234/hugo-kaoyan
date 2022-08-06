@@ -3,7 +3,7 @@ languageCode: "zh-CN"
 title: "考研 1234"
 theme: qaqland
 copyright: |
-  &copy; 2021 -- {Year} [kaoyan1234](https://kaoyan1234.com) | 微信 | 微博
+  &copy; 2021 -- {Year} [kaoyan1234](https://kaoyan1234.com) | Email | [Source](https://gitlab.com/qaqland/kaoyan)
 
 permalinks:
   /: /:year/:filename/
