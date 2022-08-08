@@ -15,3 +15,4 @@ date: 2022-08-06T10:41:13+08:00
 - [附件2：北京交通大学2022年硕士研究生招生专业目录（威海校区）](https://gs.bjtu.edu.cn/media/attachments/2021/09/20210916092633_rhbCMJr.pdf)
 - [附件3：北京交通大学2022年少数民族高层次骨干人才硕士生招生专业目录](https://gs.bjtu.edu.cn/media/attachments/2021/09/20210916092633_6kcOYE8.pdf)
 - [附件4：北京交通大学2022年退役大学生士兵计划硕士生招生专业目录](https://gs.bjtu.edu.cn/media/attachments/2021/09/20210916092633_zRITI01.pdf)
+- 
