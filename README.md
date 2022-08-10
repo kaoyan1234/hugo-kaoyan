@@ -2,20 +2,18 @@
 
 Website: https://kaoyan1234.com
 
-Repository: https://gitlab.com/qaqland/kaoyan
+Repository: https://github.com/qaqland/kaoyan
 
 # set-up
 
 ```
 $ sudo apt install hugo git
 
-$ git clone --recurse-submodules https://gitlab.com/qaqland/kaoyan.git
-
-$ hugo serve
-
-# Normally, it works.. but if you want to clone submodule(theme) manually:
+$ git clone xxx
 
 $ git submodule update --init
+
+$ hugo serve
 ```
 
 # copyright
